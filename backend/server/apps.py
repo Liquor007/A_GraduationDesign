@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ApisysConfig(AppConfig):
+class ServerConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'apisys'
+    name = 'server'
