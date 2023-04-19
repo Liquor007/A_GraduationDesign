@@ -46,9 +46,9 @@ const globalSettingsDefault: RecursiveRequired<Settings.all> = {
   },
   copyright: {
     enable: true,
-    dates: '2020-2023',
-    company: 'Fantastic-admin',
-    website: 'https://hooray.gitee.io/fantastic-admin/',
+    dates: '2023-2024',
+    company: 'Beijing Forestry University',
+    website: 'https://github.com/Liquor007/A_GraduationDesign',
     beian: '',
   },
 }

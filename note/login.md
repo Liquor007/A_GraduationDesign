@@ -108,3 +108,7 @@ const resetRules = ref<FormRules>({
 ```
 ## vue表单校验
 参考https://juejin.cn/post/7124940263981580319
+
+# 修改copyright
+example\src\settings.default.ts
+修改对应值
