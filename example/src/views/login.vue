@@ -32,7 +32,8 @@ const loginForm = ref({
 })
 const loginRules = ref<FormRules>({
   account: [
-    { required: true, trigger: 'blur', message: '请输入用户名' },
+    { required: true, trigger: 'blur', message: '请输入邮箱' },
+    { pattern: /^([a-zA-Z0-9]+[-_\.]?)+@[a-zA-Z0-9]+\.[a-z]+$/, message: '请检查邮箱格式是否正确' },
   ],
   password: [
     { required: true, trigger: 'blur', message: '请输入密码' },
@@ -69,7 +70,8 @@ const registerForm = ref({
 })
 const registerRules = ref<FormRules>({
   account: [
-    { required: true, trigger: 'blur', message: '请输入用户名' },
+    { required: true, trigger: 'blur', message: '请输入邮箱' },
+    { pattern: /^([a-zA-Z0-9]+[-_\.]?)+@[a-zA-Z0-9]+\.[a-z]+$/, message: '请检查邮箱格式是否正确' },
   ],
   captcha: [
     { required: true, trigger: 'blur', message: '请输入验证码' },
@@ -113,7 +115,8 @@ const resetForm = ref({
 })
 const resetRules = ref<FormRules>({
   account: [
-    { required: true, trigger: 'blur', message: '请输入用户名' },
+    { required: true, trigger: 'blur', message: '请输入邮箱' },
+    { pattern: /^([a-zA-Z0-9]+[-_\.]?)+@[a-zA-Z0-9]+\.[a-z]+$/, message: '请检查邮箱格式是否正确' },
   ],
   captcha: [
     { required: true, trigger: 'blur', message: '请输入验证码' },
@@ -158,7 +161,7 @@ function testAccount(account: string) {
         </div>
         <div>
           <el-form-item prop="account">
-            <el-input v-model="loginForm.account" placeholder="用户名" text tabindex="1" autocomplete="on">
+            <el-input v-model="loginForm.account" placeholder="邮箱" text tabindex="1" autocomplete="on">
               <template #prefix>
                 <el-icon>
                   <svg-icon name="ep:user" />
@@ -211,7 +214,7 @@ function testAccount(account: string) {
         </div>
         <div>
           <el-form-item prop="account">
-            <el-input v-model="registerForm.account" placeholder="用户名" tabindex="1" autocomplete="on">
+            <el-input v-model="registerForm.account" placeholder="邮箱" tabindex="1" autocomplete="on">
               <template #prefix>
                 <el-icon>
                   <svg-icon name="ep:user" />
@@ -268,7 +271,7 @@ function testAccount(account: string) {
         </div>
         <div>
           <el-form-item prop="account">
-            <el-input v-model="resetForm.account" placeholder="用户名" tabindex="1" autocomplete="on">
+            <el-input v-model="resetForm.account" placeholder="邮箱" tabindex="1" autocomplete="on">
               <template #prefix>
                 <el-icon>
                   <svg-icon name="ep:user" />
