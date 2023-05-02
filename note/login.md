@@ -112,3 +112,14 @@ const resetRules = ref<FormRules>({
 # 修改copyright
 example\src\settings.default.ts
 修改对应值
+
+# 登陆后端
+Django教程[在这里](tutorial_django.md)
+```
+django-admin startproject rear_end
+cd rear_end
+django-admin startapp restapi
+#这一步会创建管理员用户，请记录设置的密码
+python manage.py createsuperuser --email lqq010822@163.com --username admin
+```
+
