@@ -1,3 +1,4 @@
+# 前端
 在这里我假设您没有直接下载我的项目，而是准备按照步骤一步一步部署。  
 开始之前请先完成[这里](https://hooray.gitee.io/fantastic-admin/guide/ready.html)的准备工作，直接下载example以及前端需要的工具。  
 做好准备工作后，可以用vscode打开项目  
@@ -12,6 +13,12 @@ pnpm install
 pnpm run dev
 ```
 就可以看到登陆页面
+# 后端
+需要下载：
+1. [django](tutorial_django.md)
+2. djangorestframework  
+   
+[->在这里看登录页面前后端搭建](../note/login.md)
 # npm简介
 npm，全名 node package manger。
 

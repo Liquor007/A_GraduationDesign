@@ -28,13 +28,11 @@ const useUserStore = defineStore(
       account: string
       password: string
     }) {
-      // 通过 mock 进行登录
-      const res = await api.post('member/login', data, {
-        baseURL: '/mock/',
-      })
-      localStorage.setItem('account', res.data.account)
-      localStorage.setItem('token', res.data.token)
-      localStorage.setItem('failure_time', res.data.failure_time)
+      // 通过 后端 进行登录
+      const res = await api.post('login', data) // 向后端发送请求
+      localStorage.setItem('account', res.data.email)
+      localStorage.setItem('token', res.data.token)// 用不用删
+      localStorage.setItem('failure_time', res.data.failure_time)// 用不用删
       account.value = res.data.account
       token.value = res.data.token
       failure_time.value = res.data.failure_time

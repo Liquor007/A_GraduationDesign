@@ -36,7 +36,7 @@ def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
 
     #os.environ是os包里的字典对象，可以查看环境变量
-    #os.environ.setdefault('DJANGO_SETTINGS_MODULE','D:/') #设置环境变量DJANGO_SETTINGS_MODULE的值为'mysite.settings'
+    #os.environ.setdefault('DJANGO_SETTINGS_MODULE','mysite.settings') #设置环境变量DJANGO_SETTINGS_MODULE的值为'mysite.settings'
 
     try:
         from django.core.management import execute_from_command_line
@@ -253,9 +253,11 @@ CREATE DATABASE sysData CHARACTER SET utf8;
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",# 设置数据库类型sqlite or mysql or postgresql
-        "OPTIONS": {
-            "read_default_file": "/utils/db/my.cnf",
-        },
+        "NAME":"sysData",
+        "USER":"root",
+        "PASSWORD":"123456",
+        "HOST":"localhost",
+        "PORT":"3306"
     }
 }
 ```

@@ -196,15 +196,6 @@ function testAccount(account: string) {
             创建新帐号
           </el-link>
         </div>
-        <div style="margin-top: 20px; margin-bottom: -20px; text-align: center;">
-          <el-divider>演示账号一键登录</el-divider>
-          <el-button type="primary" size="small" plain @click="testAccount('admin')">
-            admin
-          </el-button>
-          <el-button size="small" plain @click="testAccount('test')">
-            test
-          </el-button>
-        </div>
       </el-form>
       <el-form v-show="formType === 'register'" ref="registerFormRef" :model="registerForm" :rules="registerRules" class="login-form" auto-complete="on">
         <div class="title-container">

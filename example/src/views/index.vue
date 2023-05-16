@@ -8,60 +8,14 @@ meta:
 function open(url: string) {
   window.open(url, '_blank')
 }
-
-const fantasticStartkitInfo = ref({
-  feature: [
-    '支持 TypeScript',
-    '默认集成 vue-router 和 pinia',
-    '全局 SCSS 资源引入',
-    '全局组件自动注册',
-    '支持 SVG 图标，CSS 精灵图自动合成',
-    '支持 mock 数据，可摆脱后端束缚独立开发',
-    '支持 gzip / brotli 优化项目体积，提高加载速度',
-    '结合 IDE 插件、ESlint 、stylelint 、Git 钩子，轻松实现团队代码规范',
-  ],
-})
-
-const fantasticAdminInfo = ref({
-  imageVisible: false,
-  index: 0,
-  data: [
-    'https://hooray.gitee.io/fantastic-admin/preview1.png',
-    'https://hooray.gitee.io/fantastic-admin/preview2.png',
-    'https://hooray.gitee.io/fantastic-admin/preview3.png',
-    'https://hooray.gitee.io/fantastic-admin/preview4.png',
-    'https://hooray.gitee.io/fantastic-admin/preview5.png',
-    'https://hooray.gitee.io/fantastic-admin/preview6.png',
-  ],
-})
-
-const oneStepAdminInfo = ref({
-  imageVisible: false,
-  index: 0,
-  data: [
-    'https://hooray.gitee.io/one-step-admin/preview1.png',
-    'https://hooray.gitee.io/one-step-admin/preview2.png',
-    'https://hooray.gitee.io/one-step-admin/preview3.png',
-    'https://hooray.gitee.io/one-step-admin/preview4.png',
-    'https://hooray.gitee.io/one-step-admin/preview5.png',
-    'https://hooray.gitee.io/one-step-admin/preview6.png',
-  ],
-})
 </script>
 
 <template>
   <div>
-    <page-header title="欢迎使用 Fantastic-admin（基础版）">
-      <template #content>
-        <div>
-          <div style="margin-bottom: 5px;">
-            这是一款<b class="text-emphasis">开箱即用</b>的中后台框架，同时它也经历过数十个真实项目的技术沉淀，确保框架在开发中可落地、可使用、可维护
-          </div>
-          <div>注：在作者就职的公司，本框架已在电商、直播、OA、ERP等多个不同领域的中后台系统中应用并稳定运行</div>
-        </div>
-      </template>
+    <page-header title="欢迎使用 苹果树叶病害图像系统">
       <el-button-group>
         <el-button type="success" size="large" plain @click="open('https://hooray.gitee.io/fantastic-admin/')">
+          <!-- 刘秋岐修改文档地址 -->
           开发文档
         </el-button>
         <el-dropdown>
@@ -84,116 +38,7 @@ const oneStepAdminInfo = ref({
         </el-dropdown>
       </el-button-group>
     </page-header>
-    <el-row :gutter="20" style="margin: 0 10px;">
-      <el-col :lg="8">
-        <page-main style="margin: 0;">
-          <div class="ecology vue">
-            <div class="main">
-              <img src="https://cn.vuejs.org/logo.svg" style="width: 30%;">
-              <h1>Fantastic-startkit</h1>
-              <h2>一款开箱即用的 Vue 项目启动套件</h2>
-              <div>
-                <el-button type="primary" plain @click="open('https://hooray.gitee.io/fantastic-startkit/')">
-                  <template #icon>
-                    <el-icon>
-                      <svg-icon name="ep:link" />
-                    </el-icon>
-                  </template>
-                  访问官网
-                </el-button>
-                <el-button plain @click="open('https://hooray.github.io/fantastic-startkit/')">
-                  <template #icon>
-                    <el-icon>
-                      <svg-icon name="ep:link" />
-                    </el-icon>
-                  </template>
-                  备用地址
-                </el-button>
-              </div>
-            </div>
-            <el-divider border-style="dashed" />
-            <ul>
-              <li v-for="item in fantasticStartkitInfo.feature" :key="item">
-                {{ item }}
-              </li>
-            </ul>
-          </div>
-        </page-main>
-      </el-col>
-      <el-col :lg="8">
-        <page-main style="margin: 0;">
-          <div class="ecology fa">
-            <div class="main">
-              <img src="https://hooray.gitee.io/fantastic-admin/logo.png" style="width: 30%;">
-              <h1>Fantastic-admin</h1>
-              <h2>一款开箱即用的 Vue 中后台管理系统框架</h2>
-              <div>
-                <el-button type="primary" plain @click="open('https://hooray.gitee.io/fantastic-admin/')">
-                  <template #icon>
-                    <el-icon>
-                      <svg-icon name="ep:link" />
-                    </el-icon>
-                  </template>
-                  访问官网
-                </el-button>
-                <el-button plain @click="open('https://hooray.github.io/fantastic-admin/')">
-                  <template #icon>
-                    <el-icon>
-                      <svg-icon name="ep:link" />
-                    </el-icon>
-                  </template>
-                  备用地址
-                </el-button>
-              </div>
-            </div>
-            <el-divider border-style="dashed" />
-            <el-carousel trigger="click" indicator-position="none" :interval="5000" height="250px">
-              <el-carousel-item v-for="(item, index) in fantasticAdminInfo.data" :key="item">
-                <el-image :src="item" fit="cover" style="cursor: pointer; width: 100%; height: 250px; margin: auto;" @click="fantasticAdminInfo.imageVisible = true; fantasticAdminInfo.index = index" />
-              </el-carousel-item>
-            </el-carousel>
-            <el-image-viewer v-if="fantasticAdminInfo.imageVisible" :url-list="fantasticAdminInfo.data" :initial-index="fantasticAdminInfo.index" @close="fantasticAdminInfo.imageVisible = false" />
-          </div>
-        </page-main>
-      </el-col>
-      <el-col :lg="8">
-        <page-main style="margin: 0;">
-          <div class="ecology osa">
-            <div class="main">
-              <img src="https://hooray.gitee.io/one-step-admin/logo.png" style="width: 30%;">
-              <h1>One-step-admin</h1>
-              <h2>一款干啥都快人一步的 Vue 中后台系统框架</h2>
-              <div>
-                <el-button type="primary" plain @click="open('https://hooray.gitee.io/one-step-admin/')">
-                  <template #icon>
-                    <el-icon>
-                      <svg-icon name="ep:link" />
-                    </el-icon>
-                  </template>
-                  访问官网
-                </el-button>
-                <el-button plain @click="open('https://hooray.github.io/one-step-admin/')">
-                  <template #icon>
-                    <el-icon>
-                      <svg-icon name="ep:link" />
-                    </el-icon>
-                  </template>
-                  备用地址
-                </el-button>
-              </div>
-            </div>
-            <el-divider border-style="dashed" />
-            <el-carousel trigger="click" indicator-position="none" :interval="5000" height="250px">
-              <el-carousel-item v-for="(item, index) in oneStepAdminInfo.data" :key="item">
-                <el-image :src="item" fit="cover" style="cursor: pointer; width: 100%; height: 250px; margin: auto;" @click="oneStepAdminInfo.imageVisible = true; oneStepAdminInfo.index = index" />
-              </el-carousel-item>
-            </el-carousel>
-            <el-image-viewer v-if="oneStepAdminInfo.imageVisible" :url-list="oneStepAdminInfo.data" :initial-index="oneStepAdminInfo.index" @close="oneStepAdminInfo.imageVisible = false" />
-          </div>
-        </page-main>
-      </el-col>
-    </el-row>
-    <page-main title="应用场景">
+    <page-main title="功能简介">
       <div class="question">
         <ol class="answer">
           <li><span>没有前端开发人员的小型公司。</span>据了解，有些小型公司没有前端开发人员，而这些公司在开发中后台系统的时候，直接要求后端开发人员来进行开发工作。所以借助 Vue 的易学习易上手特性，再加上本框架的加持，可以让后端开发人员能在短时间内转型成为全栈开发。</li>
